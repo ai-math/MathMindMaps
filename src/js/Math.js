@@ -40,6 +40,8 @@ catx.MathController = function(eventBus) {
 			   .bind(this));
 	eventBus.subscribe(mindmaps.Event.NODE_BEGIN_EDITING, this.nodeBeginEditing
 			   .bind(this));
+	eventBus.subscribe(mindmaps.Event.NODE_END_EDITING, this.nodeEndEditing
+			   .bind(this));
     };
 
     /**
@@ -50,9 +52,11 @@ catx.MathController = function(eventBus) {
     };
     
     this.nodeBeginEditing = function(node) {
-	console.log("Event > Editing Node: " + node.getContainerId() + " caption: " + node.getCaptionId() + " text: " + node.text.caption);
-	
 	var captionElem = $("#" + node.getCaptionId()).text(node.text.caption);
+    };
+
+    this.nodeEndEditing = function(node) {
+	updateMathEquationById(node.getCaptionId());
     };
     this.init();
 }

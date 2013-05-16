@@ -211,7 +211,9 @@ mindmaps.CanvasPresenter = function(eventBus, commandRegistry, mindmapModel,
     }
 
     view.stopEditNodeCaption();
+
     mindmapModel.changeNodeCaption(node, str);
+    eventBus.publish(mindmaps.Event.NODE_END_EDITING, node);
   };
 
   this.go = function() {

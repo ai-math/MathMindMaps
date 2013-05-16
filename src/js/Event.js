@@ -138,7 +138,13 @@ mindmaps.Event = {
     * @event
     * @param {mindmaps.Node} node
     */
-  NODE_BEGIN_EDITING: "NodeBeginEditingEvent"
+  NODE_BEGIN_EDITING: "NodeBeginEditingEvent",
+
+  /**
+    * @event
+    * @param {mindmaps.Node} node
+    */
+  NODE_END_EDITING: "NodeEndEditingEvent"
 };
 
 /**
