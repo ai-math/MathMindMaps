@@ -28,25 +28,31 @@ var catx = catx || {};
 
 catx.MathController = function(eventBus) {
 
-  var self = this;
-  /**
-   * Initialise.
-   * 
-   * @private
-   */
-  this.init = function() {
+    var self = this;
+    /**
+     * Initialise.
+     * 
+     * @private
+     */
+    this.init = function() {
 
-    eventBus.subscribe(mindmaps.Event.MAP_LOADED, this.mapLoaded
-        .bind(this));
+	eventBus.subscribe(mindmaps.Event.MAP_LOADED, this.mapLoaded
+			   .bind(this));
+	eventBus.subscribe(mindmaps.Event.NODE_BEGIN_EDITING, this.nodeBeginEditing
+			   .bind(this));
+    };
+
+    /**
+     * Handler for map loaded event.
+     */
+    this.mapLoaded = function(map) {
+	updateMathEquations();
+    };
     
-  };
-
-  /**
-   * Handler for map loaded event.
-   */
-  this.mapLoaded = function(map) {
-    updateMathEquations();
-  };
-
-  this.init();
+    this.nodeBeginEditing = function(node) {
+	console.log("Event > Editing Node: " + node.getContainerId() + " caption: " + node.getCaptionId() + " text: " + node.text.caption);
+	
+	var captionElem = $("#" + node.getCaptionId()).text(node.text.caption);
+    };
+    this.init();
 }

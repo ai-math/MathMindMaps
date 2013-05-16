@@ -132,7 +132,13 @@ mindmaps.Event = {
     * @event
     * @param {mindmaps.MindMap} map
     */
-  MAP_LOADED: "MapLoadedEvent"
+  MAP_LOADED: "MapLoadedEvent",
+
+  /**
+    * @event
+    * @param {mindmaps.Node} node
+    */
+  NODE_BEGIN_EDITING: "NodeBeginEditingEvent"
 };
 
 /**

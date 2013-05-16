@@ -131,6 +131,7 @@ mindmaps.CanvasPresenter = function(eventBus, commandRegistry, mindmapModel,
    * @ignore
    */
   view.nodeDoubleClicked = function(node) {
+    eventBus.publish(mindmaps.Event.NODE_BEGIN_EDITING, node);
     view.editNodeCaption(node);
   };
 

@@ -311,3 +311,11 @@ mindmaps.Node.prototype.isDescendant = function(other) {
 
   return test(this);
 };
+
+mindmaps.Node.prototype.getContainerId = function() {
+    return "node-" + this.id;
+};
+
+mindmaps.Node.prototype.getCaptionId = function() {
+    return "node-caption-" + this.id;
+};
