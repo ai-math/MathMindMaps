@@ -16,7 +16,8 @@ mindmaps.ApplicationController = function() {
       commandRegistry, mindmapModel);
   var autosaveController = new mindmaps.AutoSaveController(eventBus, mindmapModel);
   var filePicker = new mindmaps.FilePicker(eventBus, mindmapModel);
-
+  
+  var mathController = new catx.MathController(eventBus);
   /**
    * Handles the new document command.
    */

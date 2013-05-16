@@ -5,6 +5,7 @@ function initializeLaTexInlineMath() {
     MathJax.Hub.Config({
 	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
     });
+    console.log("Math > Initialize");
 }
 
 /**
@@ -12,6 +13,7 @@ function initializeLaTexInlineMath() {
  */
 function updateMathEquations() {
     MathJax.Hub.Queue(['Typeset',MathJax.Hub]);
+    console.log("Math > update: all");
 }
 
 /**
@@ -19,4 +21,32 @@ function updateMathEquations() {
  */
 function updateMathEquationById(id) {
     MathJax.Hub.Queue(['Typeset',MathJax.Hub, id]);
+    console.log("Math > update: " + id);
+}
+
+var catx = catx || {};
+
+catx.MathController = function(eventBus) {
+
+  var self = this;
+  /**
+   * Initialise.
+   * 
+   * @private
+   */
+  this.init = function() {
+
+    eventBus.subscribe(mindmaps.Event.MAP_LOADED, this.mapLoaded
+        .bind(this));
+    
+  };
+
+  /**
+   * Handler for map loaded event.
+   */
+  this.mapLoaded = function(map) {
+    updateMathEquations();
+  };
+
+  this.init();
 }

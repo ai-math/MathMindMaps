@@ -124,7 +124,15 @@ mindmaps.Event = {
    * @event
    * @param {String} message
    */
-  NOTIFICATION_ERROR: "NotificationErrorEvent"
+  NOTIFICATION_ERROR: "NotificationErrorEvent",
+  
+  /**
+    * Fired when a map is loaded and drawn.
+    * Should only be fired once per document.
+    * @event
+    * @param {mindmaps.MindMap} map
+    */
+  MAP_LOADED: "MapLoadedEvent"
 };
 
 /**

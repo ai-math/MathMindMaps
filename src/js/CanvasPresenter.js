@@ -231,6 +231,7 @@ mindmaps.CanvasPresenter = function(eventBus, commandRegistry, mindmapModel,
     view.center();
 
     mindmapModel.selectNode(map.root);
+    eventBus.publish(mindmaps.Event.MAP_LOADED, map);
   }
 
   /**
