@@ -1,10 +1,16 @@
 # MathMindMaps - A MathJax Integration Fork
 mindmaps is a prototype of an HTML5 based mind mapping application. It lets you create neat looking mind maps in the browser. 
+This fork's purpose is to add math formula editing and displaying features. Some relevant changes/improvements (especially in interaction design) are made to accompanny useability requirements introduced by new features.
 
-## Fork Features (In progress)
+## Fork Features
 
 - Add support for math equation rendering (powered by MathJax)
-- Interaction adjustments for usability
+- Add a few new events for toggling MathJax rendering automatcially when edting
+
+## To Be Done
+
+- Fix node metrics
+- Fix math zoom
 
 ## HTML5 goodness
 - Written entirely in JavaScript
@@ -15,7 +21,8 @@ mindmaps is a prototype of an HTML5 based mind mapping application. It lets you 
 
 
 ## Try it out
-The latest stable build is hosted [here] (http://drichard.org/mindmaps).
+The latest stable build of orignial mindmaps is hosted [here] (http://drichard.org/mindmaps).
+The latest stable build of MathMindMaps is hosted [here] (http://mind.catx.me)
 
 ## Build
 Although the application runs fine if you launch `/src/index.html`, be aware that this is just the DEBUG mode for development. In debug mode quite a lot of output is sent to the console, ApplicationCache is deactivated and all script files are served individually and uncompressed.
