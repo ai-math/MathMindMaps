@@ -22,7 +22,8 @@ This fork's purpose is to add math formula editing and displaying features. Some
 
 ## Try it out
 The latest stable build of orignial mindmaps is hosted [here] (http://drichard.org/mindmaps).
-The latest stable build of MathMindMaps is hosted [here] (http://mind.catx.me)
+
+The latest stable build of MathMindMaps is hosted [here] (http://catx.me/MathMindMaps)
 
 ## Build
 Although the application runs fine if you launch `/src/index.html`, be aware that this is just the DEBUG mode for development. In debug mode quite a lot of output is sent to the console, ApplicationCache is deactivated and all script files are served individually and uncompressed.
